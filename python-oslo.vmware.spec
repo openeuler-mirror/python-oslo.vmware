@@ -1,7 +1,7 @@
 %global _empty_manifest_terminate_build 0
 Name:		python-oslo-vmware
 Version:	3.7.0
-Release:	1
+Release:	2
 Summary:	Oslo VMware library
 License:	Apache-2.0
 URL:		https://opendev.org/openstack/oslo.vmware
@@ -27,6 +27,8 @@ Summary:	Oslo VMware library
 Provides:	python-oslo-vmware
 BuildRequires:	python3-devel
 BuildRequires:	python3-setuptools
+BuildRequires:  python3-pip
+BuildRequires:  python3-pbr
 %description -n python3-oslo-vmware
 Oslo VMware library for OpenStack projects
 
@@ -79,5 +81,7 @@ mv %{buildroot}/doclist.lst .
 %{_docdir}/*
 
 %changelog
+* Fri Jan 22 2021 zhangy1317 <zhangy1317@foxmail.com>
+- Add BuildRequires python3-pbr and python3-pbr
 * Fri Jan 08 2021 Python_Bot <Python_Bot@openeuler.org>
 - Package Spec generated
