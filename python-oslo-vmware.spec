@@ -3,7 +3,7 @@
 
 Name:           python-oslo-vmware
 Version:        3.7.0
-Release:        3
+Release:        4
 Summary:        Oslo VMware library for OpenStack projects
 License:        ASL 2.0
 URL:            https://opendev.org/openstack/oslo.vmware
