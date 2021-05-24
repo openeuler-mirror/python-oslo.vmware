@@ -52,7 +52,7 @@ Requires:	python2-netaddr
 Requires:	python2-six
 Requires:	python2-oslo-i18n
 Requires:	python2-oslo-utils
-Requires:	python2-PyYAML
+Requires:	python2-pyyaml
 Requires:	python2-lxml
 Requires:	python2-suds-jurko
 Requires:	python2-eventlet
