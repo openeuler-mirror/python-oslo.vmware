@@ -1,7 +1,7 @@
 %global _empty_manifest_terminate_build 0
 Name:		python-oslo-vmware
 Version:	2.31.0
-Release:	1
+Release:	2
 Summary:	Oslo VMware library
 License:	Apache-2.0
 URL:		https://docs.openstack.org/oslo.vmware/latest/
@@ -44,6 +44,7 @@ and APIs.
 %package -n python2-oslo-vmware
 Summary:	Oslo VMware library
 Provides:	python2-oslo-vmware
+BuildRequires:	python2-pbr
 BuildRequires:	python2-devel
 BuildRequires:	python2-setuptools
 Requires:	python2-pbr
@@ -171,5 +172,7 @@ mv %{buildroot}/doclist.lst .
 %{_docdir}/*
 
 %changelog
+* Mon May 31 2021 huangtianhua <huangtianhua223@gmail.com>
+- Adds BuildRequires python2-pbr to make obs success
 * Fri May 07 2021 OpenStack_SIG <openstack@openeuler.org>
 - Package Spec generated
