@@ -1,7 +1,8 @@
 %global _empty_manifest_terminate_build 0
+%global __requires_exclude eventlet
 Name:		python-oslo-vmware
 Version:	2.26.0
-Release:	2
+Release:	3
 Summary:	Oslo VMware library
 License:	Apache-2.0
 URL:		https://docs.openstack.org/oslo.vmware/latest/
@@ -168,6 +169,8 @@ mv %{buildroot}/doclist.lst .
 %{_docdir}/*
 
 %changelog
+* Mon Jun 07 2021 zhangfan <zh.f@outlook.com>
+- Drop eventlet version limit
 * Fri Jun 04 2021 wangxiyuan <wangxiyuan1007@gmail.com>
 - Bump release version to make OBS sync work
 * Fri May 07 2021 OpenStack_SIG <openstack@openeuler.org>
