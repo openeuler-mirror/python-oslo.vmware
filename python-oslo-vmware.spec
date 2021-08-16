@@ -2,12 +2,12 @@
 %global with_doc 1
 
 Name:           python-oslo-vmware
-Version:        3.7.0
+Version:        3.8.0
 Release:        4
 Summary:        Oslo VMware library for OpenStack projects
 License:        ASL 2.0
 URL:            https://opendev.org/openstack/oslo.vmware
-Source0:        https://tarballs.openstack.org/oslo.vmware/oslo.vmware-3.7.0.tar.gz
+Source0:        https://tarballs.openstack.org/oslo.vmware/oslo.vmware-3.8.0.tar.gz
 BuildArch:      noarch
 
 %description
@@ -101,7 +101,7 @@ Translation files for Oslo vmware library
 
 %prep
 
-%autosetup -n oslo.vmware-3.7.0 -S git
+%autosetup -n oslo.vmware-3.8.0
 # FIXME(hguemar): requirements blocks 0.20.1 due to lp#1696094
 # but eventlet 0.20.1-2 package has backported the fix
 sed -i '/eventlet/s/!=0.20.1,//' requirements.txt
@@ -159,6 +159,9 @@ PYTHON=python3 stestr-3 --test-path $OS_TEST_PATH run
 %license LICENSE
 
 %changelog
+* Fri Aug 13 2021 joec88 <chens141@chinaunicom.cn>
+- Update to 3.8.0 
+
 * Mon Jan 25 2021 zhangy1317 <zhangy1317@foxmail.com>
 - Add BuildRequires python3-pip
 
