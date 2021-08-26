@@ -1,170 +1,177 @@
-%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
-%global with_doc 1
-
-Name:           python-oslo-vmware
-Version:        3.7.0
-Release:        4
-Summary:        Oslo VMware library for OpenStack projects
-License:        ASL 2.0
-URL:            https://opendev.org/openstack/oslo.vmware
-Source0:        https://tarballs.openstack.org/oslo.vmware/oslo.vmware-3.7.0.tar.gz
-BuildArch:      noarch
-
+%global _empty_manifest_terminate_build 0
+%global __requires_exclude eventlet
+Name:		python-oslo-vmware
+Version:	2.26.0
+Release:	3
+Summary:	Oslo VMware library
+License:	Apache-2.0
+URL:		https://docs.openstack.org/oslo.vmware/latest/
+Source0:	https://files.pythonhosted.org/packages/86/3e/4c55a978e7fc69b3f81d172016f2d0bfd2b02132e0161697e8a37cac61c5/oslo.vmware-2.26.0.tar.gz
+BuildArch:	noarch
 %description
-Oslo VMware library for OpenStack projects
+========================
+Team and repository tags
+========================
 
-%package -n python3-oslo-vmware
-Summary:        Oslo VMware library for OpenStack projects
-%{?python_provide:%python_provide python3-oslo-vmware}
+.. image:: https://governance.openstack.org/badges/oslo.vmware.svg
+    :target: https://governance.openstack.org/reference/tags/index.html
 
-BuildRequires:  python3-devel
-BuildRequires:  python3-pbr
-BuildRequires:  python3-pip
-BuildRequires:  git
-# test dependencies
-BuildRequires: python3-ddt
-BuildRequires: python3-fixtures
-BuildRequires: python3-mock
-BuildRequires: python3-stestr
-BuildRequires: python3-subunit
-BuildRequires: python3-testtools
-BuildRequires: python3-suds
-BuildRequires: python3-oslo-concurrency
-BuildRequires: python3-oslo-context
-BuildRequires: python3-oslo-utils
-BuildRequires: python3-oslo-i18n
-BuildRequires: python3-eventlet
-BuildRequires: python3-oslo-i18n
-BuildRequires: python3-oslo-utils
-BuildRequires: python3-requests >= 2.14.2
-BuildRequires: python3-suds
-BuildRequires: python3-netaddr
-# Required to compile translation files
-BuildRequires: python3-testscenarios
-BuildRequires: python3-babel
+.. Change things from this point on
 
-BuildRequires: python3-lxml
+===================================================
+ oslo.vmware --- VMware support code for OpenStack
+===================================================
 
-Requires:  python3-pbr
-Requires:  python3-eventlet
-Requires:  python3-oslo-concurrency >= 3.26.0
-Requires:  python3-oslo-context >= 2.19.2
-Requires:  python3-oslo-i18n >= 3.15.3
-Requires:  python3-oslo-utils
-Requires:  python3-requests
-Requires:  python3-stevedore >= 1.20.0
-Requires:  python3-suds >= 0.6
-Requires:  python3-urllib3
-Requires:  python3-netaddr
-Requires:  python-oslo-vmware-lang = %{version}-%{release}
+.. image:: https://img.shields.io/pypi/v/oslo.vmware.svg
+    :target: https://pypi.python.org/pypi/oslo.vmware/
+    :alt: Latest Version
 
-Requires:  python3-lxml
-Requires:  python3-PyYAML
+.. image:: https://img.shields.io/pypi/dm/oslo.vmware.svg
+    :target: https://pypi.python.org/pypi/oslo.vmware/
+    :alt: Downloads
 
-%description -n python3-oslo-vmware
-Oslo VMware library for OpenStack projects
+The Oslo VMware library provides support for common VMware operations
+and APIs.
 
-%if 0%{?with_doc}
-%package -n python-oslo-vmware-doc
-Summary:    Documentation for OpenStack common VMware library
+* License: Apache License, Version 2.0
+* Documentation: https://docs.openstack.org/oslo.vmware/latest/
+* Source: https://git.openstack.org/cgit/openstack/oslo.vmware
+* Bugs: https://bugs.launchpad.net/oslo.vmware
 
-BuildRequires: python3-sphinx
-BuildRequires: python3-sphinxcontrib-apidoc
-BuildRequires: python3-openstackdocstheme
 
-%description -n python-oslo-vmware-doc
-Documentation for OpenStack common VMware library.
-%endif
 
-%package -n python3-oslo-vmware-tests
-Summary:    Test subpackage for OpenStack common VMware library
 
-Requires: python3-oslo-vmware = %{version}-%{release}
-Requires: python3-fixtures
-Requires: python3-mock
-Requires: python3-subunit
-Requires: python3-testtools
-Requires: python3-suds >= 0.6
-Requires: python3-oslo-context
-Requires: python3-oslo-utils
-Requires: python3-oslo-i18n >= 3.15.3
-Requires: python3-testscenarios
+%package -n python2-oslo-vmware
+Summary:	Oslo VMware library
+Provides:	python2-oslo-vmware
+BuildRequires:	python2-devel
+BuildRequires:	python2-setuptools
+Requires:	python2-pbr
+Requires:	python2-stevedore
+Requires:	python2-netaddr
+Requires:	python2-six
+Requires:	python2-oslo-i18n
+Requires:	python2-oslo-utils
+Requires:	python2-pyyaml
+Requires:	python2-lxml
+Requires:	python2-suds-jurko
+Requires:	python2-eventlet
+Requires:	python2-requests
+Requires:	python2-urllib3
+Requires:	python2-oslo-concurrency
+%description -n python2-oslo-vmware
+========================
+Team and repository tags
+========================
 
-%description -n python3-oslo-vmware-tests
-Tests for OpenStack common VMware library.
+.. image:: https://governance.openstack.org/badges/oslo.vmware.svg
+    :target: https://governance.openstack.org/reference/tags/index.html
 
-%package  -n python-oslo-vmware-lang
-Summary:   Translation files for Oslo vmware library
+.. Change things from this point on
 
-%description -n python-oslo-vmware-lang
-Translation files for Oslo vmware library
+===================================================
+ oslo.vmware --- VMware support code for OpenStack
+===================================================
+
+.. image:: https://img.shields.io/pypi/v/oslo.vmware.svg
+    :target: https://pypi.python.org/pypi/oslo.vmware/
+    :alt: Latest Version
+
+.. image:: https://img.shields.io/pypi/dm/oslo.vmware.svg
+    :target: https://pypi.python.org/pypi/oslo.vmware/
+    :alt: Downloads
+
+The Oslo VMware library provides support for common VMware operations
+and APIs.
+
+* License: Apache License, Version 2.0
+* Documentation: https://docs.openstack.org/oslo.vmware/latest/
+* Source: https://git.openstack.org/cgit/openstack/oslo.vmware
+* Bugs: https://bugs.launchpad.net/oslo.vmware
+
+
+
+
+%package help
+Summary:	Development documents and examples for oslo.vmware
+Provides:	python2-oslo-vmware-doc
+%description help
+========================
+Team and repository tags
+========================
+
+.. image:: https://governance.openstack.org/badges/oslo.vmware.svg
+    :target: https://governance.openstack.org/reference/tags/index.html
+
+.. Change things from this point on
+
+===================================================
+ oslo.vmware --- VMware support code for OpenStack
+===================================================
+
+.. image:: https://img.shields.io/pypi/v/oslo.vmware.svg
+    :target: https://pypi.python.org/pypi/oslo.vmware/
+    :alt: Latest Version
+
+.. image:: https://img.shields.io/pypi/dm/oslo.vmware.svg
+    :target: https://pypi.python.org/pypi/oslo.vmware/
+    :alt: Downloads
+
+The Oslo VMware library provides support for common VMware operations
+and APIs.
+
+* License: Apache License, Version 2.0
+* Documentation: https://docs.openstack.org/oslo.vmware/latest/
+* Source: https://git.openstack.org/cgit/openstack/oslo.vmware
+* Bugs: https://bugs.launchpad.net/oslo.vmware
+
+
+
 
 %prep
-
-%autosetup -n oslo.vmware-3.7.0 -S git
-# FIXME(hguemar): requirements blocks 0.20.1 due to lp#1696094
-# but eventlet 0.20.1-2 package has backported the fix
-sed -i '/eventlet/s/!=0.20.1,//' requirements.txt
-# FIXME(hguemar): we use system lxml from EL7
-sed -i '/lxml/s/,>=3.4.1//' requirements.txt
+%autosetup -n oslo.vmware-2.26.0
 
 %build
-%{py3_build}
-
-%if 0%{?with_doc}
-# generate html docs
-sphinx-build-3 -b html doc/source doc/build/html
-
-# remove the sphinx-build-3 leftovers
-rm -rf doc/build/html/.{doctrees,buildinfo}
-%endif
-
-# Generate i18n files
-python3 setup.py compile_catalog -d build/lib/oslo_vmware/locale --domain oslo_vmware
+%py2_build
 
 %install
-%{py3_install}
+%py2_install
+install -d -m755 %{buildroot}/%{_pkgdocdir}
+if [ -d doc ]; then cp -arf doc %{buildroot}/%{_pkgdocdir}; fi
+if [ -d docs ]; then cp -arf docs %{buildroot}/%{_pkgdocdir}; fi
+if [ -d example ]; then cp -arf example %{buildroot}/%{_pkgdocdir}; fi
+if [ -d examples ]; then cp -arf examples %{buildroot}/%{_pkgdocdir}; fi
+pushd %{buildroot}
+if [ -d usr/lib ]; then
+	find usr/lib -type f -printf "/%h/%f\n" >> filelist.lst
+fi
+if [ -d usr/lib64 ]; then
+	find usr/lib64 -type f -printf "/%h/%f\n" >> filelist.lst
+fi
+if [ -d usr/bin ]; then
+	find usr/bin -type f -printf "/%h/%f\n" >> filelist.lst
+fi
+if [ -d usr/sbin ]; then
+	find usr/sbin -type f -printf "/%h/%f\n" >> filelist.lst
+fi
+touch doclist.lst
+if [ -d usr/share/man ]; then
+	find usr/share/man -type f -printf "/%h/%f.gz\n" >> doclist.lst
+fi
+popd
+mv %{buildroot}/filelist.lst .
+mv %{buildroot}/doclist.lst .
 
-# Install i18n .mo files (.po and .pot are not required)
-install -d -m 755 %{buildroot}%{_datadir}
-rm -f %{buildroot}%{python3_sitelib}/oslo_vmware/locale/*/LC_*/oslo_vmware*po
-rm -f %{buildroot}%{python3_sitelib}/oslo_vmware/locale/*pot
-mv %{buildroot}%{python3_sitelib}/oslo_vmware/locale %{buildroot}%{_datadir}/locale
+%files -n python2-oslo-vmware -f filelist.lst
+%dir %{python2_sitelib}/*
 
-# Find language files
-%find_lang oslo_vmware --all-name
-
-%check
-rm -f ./oslo_vmware/tests/test_hacking.py
-export OS_TEST_PATH="./oslo_vmware/tests"
-PYTHON=python3 stestr-3 --test-path $OS_TEST_PATH run
-
-%files -n python3-oslo-vmware
-%doc README.rst
-%license LICENSE
-%{python3_sitelib}/oslo_vmware
-%{python3_sitelib}/*.egg-info
-%exclude %{python3_sitelib}/oslo_vmware/tests
-
-%if 0%{?with_doc}
-%files -n python-oslo-vmware-doc
-%doc doc/build/html
-%license LICENSE
-%endif
-
-%files -n python3-oslo-vmware-tests
-%{python3_sitelib}/oslo_vmware/tests
-
-%files -n python-oslo-vmware-lang -f oslo_vmware.lang
-%license LICENSE
+%files help -f doclist.lst
+%{_docdir}/*
 
 %changelog
-* Mon Jan 25 2021 zhangy1317 <zhangy1317@foxmail.com>
-- Add BuildRequires python3-pip
-
-* Wed Oct 21 2020 Joel Capitao <jcapitao@redhat.com> 3.7.0-2
-- Enable sources tarball validation using GPG signature.
-
-* Fri Sep 18 2020 RDO <dev@lists.rdoproject.org> 3.7.0-1
-- Update to 3.7.0
-
+* Mon Jun 07 2021 zhangfan <zh.f@outlook.com>
+- Drop eventlet version limit
+* Fri Jun 04 2021 wangxiyuan <wangxiyuan1007@gmail.com>
+- Bump release version to make OBS sync work
+* Fri May 07 2021 OpenStack_SIG <openstack@openeuler.org>
+- Package Spec generated
