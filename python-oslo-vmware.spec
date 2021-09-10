@@ -2,7 +2,7 @@
 %global __requires_exclude eventlet
 Name:		python-oslo-vmware
 Version:	2.26.0
-Release:	3
+Release:	4
 Summary:	Oslo VMware library
 License:	Apache-2.0
 URL:		https://docs.openstack.org/oslo.vmware/latest/
@@ -44,6 +44,7 @@ and APIs.
 %package -n python2-oslo-vmware
 Summary:	Oslo VMware library
 Provides:	python2-oslo-vmware
+BuildRequires:	python2-pbr
 BuildRequires:	python2-devel
 BuildRequires:	python2-setuptools
 Requires:	python2-pbr
@@ -169,9 +170,14 @@ mv %{buildroot}/doclist.lst .
 %{_docdir}/*
 
 %changelog
+* Fri Sep 10 2021 huangtianhua <huangtianhua@huawei.com> - 2.26.0-4
+- Adds python2-pbr as BuildRequires
+
 * Mon Jun 07 2021 zhangfan <zh.f@outlook.com>
 - Drop eventlet version limit
+
 * Fri Jun 04 2021 wangxiyuan <wangxiyuan1007@gmail.com>
 - Bump release version to make OBS sync work
+
 * Fri May 07 2021 OpenStack_SIG <openstack@openeuler.org>
 - Package Spec generated
