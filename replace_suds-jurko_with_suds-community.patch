@@ -1,0 +1,31 @@
+--- a/oslo.vmware.egg-info/requires.txt	2021-02-08 21:19:43.000000000 +0800
++++ b/oslo.vmware.egg-info/requires.txt	2022-05-23 10:20:14.919311300 +0800
+@@ -9,5 +9,5 @@
+ pbr!=2.1.0,>=2.0.0
+ requests>=2.14.2
+ stevedore>=1.20.0
+-suds-jurko>=0.6
++suds-community>=0.6
+ urllib3>=1.21.1
+--- a/lower-constraints.txt	2021-02-08 21:19:43.000000000 +0800
++++ b/lower-constraints.txt	2022-05-23 10:22:40.992941200 +0800
+@@ -39,7 +39,7 @@
+ snowballstemmer==1.2.1
+ stestr==2.0.0
+ stevedore==1.20.0
+-suds-jurko==0.6
++suds-community==0.6
+ testtools==2.2.0
+ traceback2==1.4.0
+ unittest2==1.1.0
+--- a/requirements.txt	2021-02-08 21:19:43.000000000 +0800
++++ b/requirements.txt	2022-05-23 10:25:49.445233700 +0800
+@@ -14,7 +14,7 @@
+ PyYAML>=3.13 # MIT
+ 
+ lxml>=4.5.0 # BSD
+-suds-jurko>=0.6 # LGPLv3+
++suds-community>=0.6 # LGPLv3+
+ eventlet!=0.18.3,!=0.20.1,>=0.18.2 # MIT
+ requests>=2.14.2 # Apache-2.0
+ urllib3>=1.21.1 # MIT
