@@ -3,11 +3,12 @@
 
 Name:           python-oslo-vmware
 Version:        3.8.0
-Release:        5
+Release:        6
 Summary:        Oslo VMware library for OpenStack projects
 License:        ASL 2.0
 URL:            https://opendev.org/openstack/oslo.vmware
 Source0:        https://tarballs.openstack.org/oslo.vmware/oslo.vmware-3.8.0.tar.gz
+Patch01:        replace_suds-jurko_with_suds-community.patch
 BuildArch:      noarch
 
 %description
@@ -28,7 +29,7 @@ BuildRequires: python3-mock
 BuildRequires: python3-stestr
 BuildRequires: python3-subunit
 BuildRequires: python3-testtools
-BuildRequires: python3-suds-jurko
+BuildRequires: python3-suds2
 BuildRequires: python3-oslo-concurrency
 BuildRequires: python3-oslo-context
 BuildRequires: python3-oslo-utils
@@ -37,7 +38,6 @@ BuildRequires: python3-eventlet
 BuildRequires: python3-oslo-i18n
 BuildRequires: python3-oslo-utils
 BuildRequires: python3-requests >= 2.14.2
-BuildRequires: python3-suds-jurko
 BuildRequires: python3-netaddr
 # Required to compile translation files
 BuildRequires: python3-testscenarios
@@ -53,7 +53,7 @@ Requires:  python3-oslo-i18n >= 3.15.3
 Requires:  python3-oslo-utils
 Requires:  python3-requests
 Requires:  python3-stevedore >= 1.20.0
-Requires:  python3-suds-jurko
+Requires:  python3-suds2
 Requires:  python3-urllib3
 Requires:  python3-netaddr
 Requires:  python-oslo-vmware-lang = %{version}-%{release}
@@ -84,7 +84,7 @@ Requires: python3-fixtures
 Requires: python3-mock
 Requires: python3-subunit
 Requires: python3-testtools
-Requires: python3-suds-jurko
+Requires: python3-suds2
 Requires: python3-oslo-context
 Requires: python3-oslo-utils
 Requires: python3-oslo-i18n >= 3.15.3
@@ -101,7 +101,7 @@ Translation files for Oslo vmware library
 
 %prep
 
-%autosetup -n oslo.vmware-3.8.0
+%autosetup -n oslo.vmware-3.8.0 -p1
 # FIXME(hguemar): requirements blocks 0.20.1 due to lp#1696094
 # but eventlet 0.20.1-2 package has backported the fix
 sed -i '/eventlet/s/!=0.20.1,//' requirements.txt
@@ -159,6 +159,9 @@ PYTHON=python3 stestr-3 --test-path $OS_TEST_PATH run
 %license LICENSE
 
 %changelog
+* Tue May 31 2022 lvxiaoqian <xiaoqian@nj.iscas.ac.cn> - 3.8.0-6
+- replace suds-jurko with suds-community
+
 * Tue Aug 17 2021 liusheng <liusheng2048@gmail.com> - 3.8.0-5
 - Replace python3-suds with python3-suds-jurko requires
 
